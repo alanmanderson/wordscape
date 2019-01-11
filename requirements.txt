@@ -1,1 +1,1 @@
-Merriam-Webster-API==1.0
+git+git://github.com/alanmanderson/merriam-webster-api@v1.01
