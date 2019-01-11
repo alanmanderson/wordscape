@@ -1,5 +1,9 @@
-WORDS_FILE = 'words.txt'
-NOT_WORDS_FILE = 'not_words.txt'
+import os
+
+file_path = os.path.dirname(os.path.abspath(__file__))
+
+WORDS_FILE = file_path + '/../words/collegiate/words.txt'
+NOT_WORDS_FILE = file_path + '/../words/collegiate/not_words.txt'
 
 def get_words(filename):
   with open(filename, 'r') as f:
