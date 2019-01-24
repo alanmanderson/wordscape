@@ -1,0 +1,22 @@
+<html>
+  <head>
+    <title>Submit a form</title>
+   <link rel="stylesheet" type="text/css" href="/static/style.css">
+  </head>
+  <body>
+    <div id="container">
+      <div class="pagetitle">
+        <h1>Submit a form</h1>
+      </div>
+      <div id="main">
+        <form method="post" action="{{ url_for('post_word') }}">
+          <label for="word">Word:</label>
+          <input type="text" name="word"><br />
+          <label for="length">Length:</label>
+          <input type="length" name="length"><br />
+          <input type="submit">
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

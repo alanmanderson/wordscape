@@ -1,5 +1,5 @@
 from merriam_webster.api import *
-from db import *
+from app.db import *
 from time import sleep
 from os import getenv
 

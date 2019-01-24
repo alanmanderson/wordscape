@@ -1,4 +1,4 @@
-from memo_dictionary import is_a_word
+from app.memo_dictionary import is_a_word
 
 def get_words_by_length(letters, length):
   if length > len(letters): raise Exception('length is too big for these letters')
