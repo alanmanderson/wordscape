@@ -1,4 +1,4 @@
-from app.memo_dictionary import is_a_word
+from app import memo_dictionary
 
 def get_words_by_length(letters, length):
   if length > len(letters): raise Exception('length is too big for these letters')
@@ -16,6 +16,7 @@ def get_words_by_length(letters, length):
 def filter_non_words(words):
   real_words = []
   for word in words:
-    if is_a_word(word):
+    if memo_dictionary.is_a_word(word):
       real_words.append(word)
+  memo_dictionary.add_new_words()
   return real_words
