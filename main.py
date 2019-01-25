@@ -17,6 +17,7 @@ def index():
         words = get_words_by_length(word, length[i])
         print('len of words: '+ str(len(words)))
         real_words = filter_non_words(words)
+        real_words.sort()
         all_words.append(real_words)
     return jsonify(all_words)
 
