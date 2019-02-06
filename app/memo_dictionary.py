@@ -18,11 +18,10 @@ def is_a_word(word):
   global non_words
   if word in words: return True
   if word in non_words: return False
-  api_key = getenv('MERRIAM_WEBSTER_COLLEGIATE_KEY')
   retry = 0
   while retry < 3:
     try:
-      dictionary = CollegiateDictionary(api_key)
+      dictionary = get_dictionary(getenv('DEFAULT_DICTIONARY'))
       dictionary.lookup(word)
       words.add(word)
       new_words.add(word)
@@ -38,3 +37,10 @@ def is_a_word(word):
       sleep(60)
       retry += 1
 
+def get_dictionary(type):
+    type = type.upper()
+    api_key = getenv('MERRIAM_WEBSTER_'+type+'_KEY')
+    if type == 'COLLEGIATE':
+        return CollegiateDictionary(api_key)
+    if type == 'INTERMEDIATE':
+        return IntermediateDictionary(api_key)

@@ -6,8 +6,10 @@ from google.cloud import storage
 #WORDS_FILE = file_path + '/../words/collegiate/words.txt'
 #NOT_WORDS_FILE = file_path + '/../words/collegiate/not_words.txt'
 
-WORDS_FILE = 'collegiate/words.txt'
-NOT_WORDS_FILE = 'collegiate/not_words.txt'
+default_dictionary = os.getenv('DEFAULT_DICTIONARY').lower()
+WORDS_FILE = default_dictionary + '/words.txt'
+NOT_WORDS_FILE = default_dictionary + '/not_words.txt'
+
 BUCKET = os.getenv('WORDS_BUCKET')
 client = storage.Client()
 bucket = client.get_bucket(BUCKET)

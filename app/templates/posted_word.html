@@ -1,20 +1,27 @@
-<html>
+<!doctype html>
+<html lang="en">
  <head>
-   <title>Submitted form</title>
+   <title>Wordscape!</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
    <link rel="stylesheet" type="text/css" href="/static/style.css">
  </head>
  <body>
-   <div id="container">
-     <div class="pagetitle">
-       <h1>Form submitted</h1>
+   <div class="container">
+     <div class="row">
+       <strong>Word: </strong>{{word}} <br>
+       <strong>Length: </strong>{{length}} <br>
      </div>
-     <div id="main">
-       <p>Thanks for your submission, {{word}}!</p>
-       <p>Here's a review of the information that you sent:</p>
-       <p>
-          <strong>Word: </strong>{{word}} <br>
-          <strong>Length: </strong>{{length}} <br>
-       </p>
+     <div class="row">
+       {% for words_of_length in words %}
+         <div class="col-sm">
+            {% for cur_word in words_of_length %}
+              <div class="col-12">
+                  {{cur_word}}
+              </div>
+            {% endfor %}
+         </div>
+       {% endfor %}
      </div>
    </div>
  </body>

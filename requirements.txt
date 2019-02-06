@@ -1,4 +1,4 @@
-git+git://github.com/alanmanderson/merriam-webster-api@v1.01
+git+git://github.com/alanmanderson/merriam-webster-api@v1.02
 cachetools==3.0.0
 certifi==2018.11.29
 chardet==3.0.4
